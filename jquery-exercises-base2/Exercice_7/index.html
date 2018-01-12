@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html>
+
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<link href="style.css" rel="stylesheet" type="text/css" />
 		<title>jQuery : Exercice 1</title>
 	</head>
+
 	<body>
 		<h1>jQuery : Exercice 1</h1>
-		<div id="contenu">
-			<img src="jquery-logo.png" />
+		<div id="contenu"> <img src="jquery-logo.png" />
 			<h2>Qu'est-ce-que jQuery ?</h2>
-			<p>jQuery est une bibliothèque <span class="rouge">JavaScript</span> libre et multi-plateforme créée pour faciliter l'écriture de <a href="https://fr.wikipedia.org/wiki/Client_Side_Scripting">scripts côté client</a> dans le code <span class="vert">HTML</span> des pages web.</p>
+			<p>jQuery est une bibliothèque <span class="rouge">JavaScript</span> libre et multi-plateforme créée pour faciliter l'écriture de <a href="https://fr.wikipedia.org/wiki/Client_Side_Scripting">scripts côté client</a> dans le code <span class="vert">HTML</span>				des pages web.</p>
 			<p>La première version est lancée en janvier 2006 par <a href="https://fr.wikipedia.org/wiki/John_Resig">John Resig</a>.</p>
 			<h2>Que peut-on faire avec jQuery ?</h2>
 			<p>La bibliothèque contient notamment les fonctionnalités suivantes :</p>
@@ -22,9 +23,8 @@
 				<li><span class="vert">AJAX</span> ;</li>
 				<li>Plugins ;</li>
 				<li>Utilitaires (version du <a href="https://fr.wikipedia.org/wiki/Navigateur_web">navigateur web</a>,...).</li>
-			</ul>	
+			</ul>
 		</div>
-		
 		<div id="modifications">
 			<h2>Modifications de l'article</h2>
 			<ol id="instructions">
@@ -37,30 +37,34 @@
 				<li>Cliquer ici pour ajouter "Chapitre 1 :" devant le 1er titre h2<br>et "Chapitre 2 :" devant le 2ème titre h2</li>
 			</ol>
 		</div>
-		
 		<script type="text/javascript" src="jquery.js"></script>
 		<script>
-			$(document).ready(function(){
+			$(document).ready(function() {
 				/* agrandir la police de caractères (120%) */
-				
-				
+				$('#instructions').children('li:first').click(function() {
+					$('body').css('font-size', '120%');
+				});
 				/* diminuer la police de caractères (80%) */
-		
-				
+				$('#instructions').children('li:nth-child(2)').click(function() {
+					$('body').css('font-size', '80%');
+				});
 				/* mettre en gras ou remettre en normal les mots en vert */
-
-				
+				$('#instructions').children('li:nth-child(3)').toggle(function() {
+					$('.vert').css('font-weight', 'bold');
+				}, function() {
+					$('.vert').css('font-weight', 'normal');
+				});
 				/* souligner ou remettre en normal les mots en rouge */
-			
-				
+				$('#instructions').children('li:nth-child(4)').toggle(function() {
+					$('.rouge').css('text-decoration', 'underline');
+				}, function() {
+					$('.rouge').css('text-decoration', 'none');
+				});
 				/* remplacer le logo par une autre image au survol */
-				
-				
 				/* Afficher l'URL des liens dans une infobulle lors du survol des liens */
-				
 				/* ajouter "Chapitre 1 :" devant le 1er titre h2<br>et "Chapitre 2 :" devant le 2ème titre h2 */
-				
 			});
 		</script>
 	</body>
-</html>	
+
+</html>
