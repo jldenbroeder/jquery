@@ -61,8 +61,31 @@
 					$('.rouge').css('text-decoration', 'none');
 				});
 				/* remplacer le logo par une autre image au survol */
+				$('#instructions').children('li:nth-child(5)').mouseover(function() {
+					$('img').attr('src', 'koala.jpg');
+				});
+				$('#instructions').children('li:nth-child(5)').mouseout(function() {
+					$('img').attr('src', 'jquery-logo.png');
+				});
 				/* Afficher l'URL des liens dans une infobulle lors du survol des liens */
+				var liens = $('a');
+				for (i = 0; i < liens.length; i++) {
+					$(liens[i]).attr('title', liens[i]);
+				}
 				/* ajouter "Chapitre 1 :" devant le 1er titre h2<br>et "Chapitre 2 :" devant le 2ème titre h2 */
+				$('#instructions').children('li:last').click(function() {
+// $("div:contains('John')")
+// $( "input:not(:checked) + span" ).css( "background-color", "yellow" );
+var premier = $('h2:first').text();
+
+if ( $('h2:first:not("Chapitre")').text() ) ){
+console.log(premier);
+// 	$('h2:first').prepend( "Chapitre 1: " );
+// }
+// 						$('h2:eq(1)').prepend( "Chapitre 2: " );
+
+
+				});
 			});
 		</script>
 	</body>
