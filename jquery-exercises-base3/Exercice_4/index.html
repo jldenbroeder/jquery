@@ -16,21 +16,35 @@
     Bouton 3 : remet les couleurs initiales
     Bouton 4 : fait disparaître le rectangle
     Bouton 5 : fait réaparaître le rectangle -->
-    
-    <form> <button type="button" name="plus" id="plus">+</button>
-      <form> <button type="button" name="moins" id="moins">-</button> <label for="resultat">Résultat : </label><input type="text" name="resultat" value="0" id="resultat" /> </form>
-      <script>
-        $('#plus').click(function() {
-          var compteur = parseInt($("#resultat").val());
-          compteur = compteur + 1;
-          $("#resultat").val(compteur);
-        });
-        $('#moins').click(function() {
-          var compteur = parseInt($("#resultat").val());
-          compteur = compteur - 1;
-          $("#resultat").val(compteur);
-        });
-      </script>
+    <form> <button type="button" name="bt1" id="bt1">1</button> <button type="button" name="bt2" id="bt2">2</button> <button type="button" name="bt3" id="bt3">3</button> <button type="button" name="bt4" id="bt4">4</button> <button type="button" name="bt5" id="bt5">5</button>      </form>
+    <div id="rectangle" style="width:100px; height:10px; margin:20px; background:red;"></div>
+    <script>
+      $('#bt1').click(function() {
+        var hauteurDiv = $('#rectangle').height();
+        if (hauteurDiv < 100) {
+          // Ajouter 10 à la hauteur
+          hauteurDiv = hauteurDiv + 10;
+          console.log(hauteurDiv);
+          $('#rectangle, .height').css('height', hauteurDiv);
+        } else {
+          hauteurDiv = 10;
+          console.log(hauteurDiv);
+          $('#rectangle, .height').css('height', hauteurDiv);
+        }
+      });
+      $('#bt2').click(function() {
+        $('#rectangle').css('background', 'green');
+      });
+      $('#bt3').click(function() {
+        $('#rectangle').css('background', 'red');
+      });
+      $('#bt4').click(function() {
+        $('#rectangle').hide();
+      });
+      $('#bt5').click(function() {
+        $('#rectangle').show();
+      });
+    </script>
   </body>
 
 </html>
