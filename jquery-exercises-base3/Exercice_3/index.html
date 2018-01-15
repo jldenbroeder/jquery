@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <script src="jquery-2.2.4.js"></script>
+    <title>Exercice 3</title>
+  </head>
+
+  <body>
+    <p>Trouve le nombre aléatoire de 0 à 100</p>
+    <form> <label for="resultat">Votre chiffre : </label><input type="text" name="proposition" value="" id="proposition" size="3" /> <button type="button" name="button" id="envoyer">OK</button> </form> <br>
+    <div id="resultat"></div> <br>
+    <div id="essai"></div>
+    <script>
+      var nbrEssai = 0;
+      // Entier aléatoire entre min (inclus) et max (inclus)
+      function aleatoire(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+      // de 0 inclus à 100 inclus
+      var nbrAleatoire = aleatoire(0, 100);
+      console.log(nbrAleatoire);
+      // Recuperation du nombre a deviner
+      $('#envoyer').click(function() {
+        var nbrDevine = parseInt($("#proposition").val());
+        console.log(nbrDevine);
+        // si il est en-dessous
+        if (nbrDevine < nbrAleatoire) {
+          $('#resultat').text("Plus grand !");
+          console.log("plus");
+        }
+        // // si il est au-dessus
+        else if (nbrDevine > nbrAleatoire) {
+          $('#resultat').text("Plus petit !");
+          console.log("moins");
+        }
+        // // si il est exact
+        else {
+          $('#resultat').text("Exacte !");
+          console.log("BINGOOOOO!!!!");
+        }
+        nbrEssai = nbrEssai + 1;
+        $('#essai').text("Nombre d'essai: " + nbrEssai);
+        console.log(nbrEssai);
+      });
+    </script>
+  </body>
+
+</html>

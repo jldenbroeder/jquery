@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <script src="jquery-2.2.4.js"></script>
+    <title>Exercice 4</title>
+  </head>
+
+  <body>
+    <!--
+    Construisez une page html avec 5 boutons et un rectangle. Chaque bouton provoque une action sur le rectangle.
+
+    Bouton 1 : augmente la hauteur de 10px, si il dépasse 100px, il remet la hauteur à 10px
+    Bouton 2 : met le rectangle en vert
+    Bouton 3 : remet les couleurs initiales
+    Bouton 4 : fait disparaître le rectangle
+    Bouton 5 : fait réaparaître le rectangle -->
+    
+    <form> <button type="button" name="plus" id="plus">+</button>
+      <form> <button type="button" name="moins" id="moins">-</button> <label for="resultat">Résultat : </label><input type="text" name="resultat" value="0" id="resultat" /> </form>
+      <script>
+        $('#plus').click(function() {
+          var compteur = parseInt($("#resultat").val());
+          compteur = compteur + 1;
+          $("#resultat").val(compteur);
+        });
+        $('#moins').click(function() {
+          var compteur = parseInt($("#resultat").val());
+          compteur = compteur - 1;
+          $("#resultat").val(compteur);
+        });
+      </script>
+  </body>
+
+</html>
