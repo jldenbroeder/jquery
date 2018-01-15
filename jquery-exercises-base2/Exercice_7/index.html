@@ -78,13 +78,12 @@
 // $( "input:not(:checked) + span" ).css( "background-color", "yellow" );
 var premier = $('h2:first').text();
 
-if ( $('h2:first:not("Chapitre")').text() ) ){
-console.log(premier);
-// 	$('h2:first').prepend( "Chapitre 1: " );
-// }
-// 						$('h2:eq(1)').prepend( "Chapitre 2: " );
-
-
+if ( $('h2:first:not("Chapitre")').text() ){
+		$('h2:first').prepend( "Chapitre 1: " );
+}
+if ( $('h2:eq(1):not("Chapitre")').text() ){
+		$('h2:eq(1)').prepend( "Chapitre 2: " );
+}
 				});
 			});
 		</script>
